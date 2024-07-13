@@ -18,15 +18,6 @@ resource "aws_s3_bucket_website_configuration" "website" {
   error_document {
     key = "error.html"
   }
-
-  routing_rule {
-    condition {
-      key_prefix_equals = "docs/"
-    }
-    redirect {
-      replace_key_prefix_with = "documents/"
-    }
-  }
 }
 
 resource "aws_s3_bucket_ownership_controls" "bucket_ownership" {
@@ -55,15 +46,23 @@ resource "aws_s3_bucket_acl" "bucket_acl" {
   acl    = "public-read"
 }
 
+module "tempalte_files" {
+  source = "hashicorp/dir/template"
+
+  base_dir = "../out"
+  
+}
 
 resource "aws_s3_object" "react_app_files" {
   depends_on = [ aws_s3_bucket_acl.bucket_acl ]
-  for_each = fileset("../out", "**")
-
+  for_each = module.tempalte_files.files
   bucket = aws_s3_bucket.react_app_bucket.bucket
-  key    = each.value
-  source = "../out/${each.value}"
+  key    = each.key
+  content_type = each.value.content_type
+  source  = each.value.source_path
+  content = each.value.content
   acl    = "public-read"
+  etag = each.value.digests.md5
 }
 
 resource "aws_cloudfront_distribution" "react_app_distribution" {
