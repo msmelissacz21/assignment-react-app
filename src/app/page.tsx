@@ -3,11 +3,12 @@
 import Navbar from "./components/nav";
 import Footer from "./components/footer";
 import PhotoGallery from "./components/photogallery";
+import { useState } from "react";
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-gray-100">
-      <header className="shadow-2xl shadow-orange-500/50">
+      <header className="shadow-2xl shadow-grey-400/40">
         <Navbar />
       </header>
       <main className="flex-grow">
