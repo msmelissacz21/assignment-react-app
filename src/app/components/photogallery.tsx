@@ -15,7 +15,7 @@ const photos = [
 
 const PhotoGallery: React.FC = () => {
   return (
-    <div className="flex flex-wrap -m-4">
+    <div className="flex flex-wrap">
       {photos.map((photo, index) => (
         <div key={index} className="p-4 w-full md:w-1/2 lg:w-1/3">
           <PhotoCard imageSrc={photo.src} description={photo.description} />

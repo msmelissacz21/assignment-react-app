@@ -7,7 +7,7 @@ interface PhotoCardProps {
 
 const PhotoCard: React.FC<PhotoCardProps> = ({ imageSrc, description }) => {
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg">
+    <div className="max-w-sm rounded overflow-hidden shadow-lg mx-auto">
       <img className="w-full" src={imageSrc} alt={description} />
       <div className="px-6 py-4">
         <div className="font-bold text-xl mb-2 text-stone-500 drop-shadow-md">{description}</div>
