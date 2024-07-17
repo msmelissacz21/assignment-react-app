@@ -1,6 +1,6 @@
 provider "aws" {
   region = "us-east-2"
-  profile = "AWS-cli-user"
+  profile = "aws-cli-user"
 }
 
 resource "aws_s3_bucket" "react_app_bucket" {

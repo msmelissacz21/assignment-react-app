@@ -6,7 +6,7 @@
 ```bash
 # Create ./out build folder with static html
 npm install
-npm build
+npm run build
 ```
 ```bash
 # Deploy AWS Infrastructure

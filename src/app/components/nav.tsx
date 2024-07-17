@@ -10,6 +10,7 @@ const Navbar = () => {
   }
 
   //Array with navbar items
+  //Todo: fix this routing so it works with both cloudfront and local 
   const navItems = [
     { id: 1, text: 'Home', path: "/"},
     { id: 2, text: 'Recipes', path: "/recipelist.html"},
