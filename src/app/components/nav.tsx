@@ -12,9 +12,9 @@ const Navbar = () => {
   //Array with navbar items
   const navItems = [
     { id: 1, text: 'Home', path: "/"},
-    { id: 2, text: 'Recipes', path: "/recipelist"},
-    { id: 3, text: 'About', path: "/about"},
-    { id: 4, text: 'Contact', path: "/contact"}
+    { id: 2, text: 'Recipes', path: "/recipelist.html"},
+    { id: 3, text: 'About', path: "/about.html"},
+    { id: 4, text: 'Contact', path: "/contact.html"}
   ];
   
 
